@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+class Prepost
+{
+    int capacity;
+public:
+    Prepost()
+    {
+    }
+    Prepost(int a)
+    {
+        capacity=a;
+    }
+    Prepost operator ++()
+    {
+        Prepost temp;
+        temp.capacity=capacity;
+        cout<<"Before increment : "<<temp.capacity<<endl;
+        temp.capacity=++capacity;
+        cout<<"After increment : "<<temp.capacity<<endl;
+    }
+    Prepost operator ++(int)
+    {
+        Prepost temp;
+        temp.capacity=capacity;
+        cout<<"Before increment : "<<temp.capacity<<endl;
+        temp.capacity=capacity++;
+        cout<<"After increment : "<<temp.capacity<<endl;
+    }
+};
+
+int main()
+{
+    Prepost c1(10),c2,c3;
+    c2=++c1;
+    c3=c1++;
+
+}
