@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+
+class shop {
+protected:
+    string title;
+    int price;
+
+public:
+    void putdata()
+    {
+        cout<<title<<endl<<price<<endl;
+    }
+    void getdata()
+    {
+        cin>>title;
+        cin>>price;
+    }
+};
+class book:public shop
+{
+    int pagecount;
+public:
+    void putdata()
+    {
+        cout<<pagecount<<endl;
+    }
+    void getdata()
+    {
+        cin>>pagecount;
+    }
+};
+class tape:public shop
+{
+    float listeningtime;
+public:
+    void putdata()
+    {
+        cout<<listeningtime<<endl;
+    }
+    void getdata()
+    {
+        cin>>listeningtime;
+    }
+};
+
+int main(void)
+{
+cout<<"Enter the details of shop :"<<endl;
+shop shop;
+shop.getdata();
+shop.putdata();
+cout<<"Enter the details of book :"<<endl;
+book book;
+book.getdata();
+book.putdata();
+cout<<"Enter details of the videotape :"<<endl;
+tape tape;
+tape.getdata();
+tape.putdata();
+
+return 0;
+}
