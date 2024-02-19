@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class complex
+{
+    int real,imag;
+public:
+    complex()
+    {
+        real=0;
+        imag=0;
+    }
+    complex(int a,int b)
+    {
+        real=a;
+        imag=b;
+    }
+    complex operator +(complex obj1)
+    {
+        complex temp;
+        temp.real=real+obj1.real;
+        temp.imag=imag+obj1.imag;
+        return temp;
+    }
+    void display()
+    {
+        cout<<real<<"+"<<imag<<"i"<<endl;
+    }
+};
+
+int main()
+{
+    complex c1(3,4),c2(7,8),c3;
+    c3=c1+c2;
+    c3.display();
+
+}
