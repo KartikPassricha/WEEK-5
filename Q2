@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+class Box
+{
+    int capacity;
+public:
+    Box()
+    {
+    }
+    Box(double capacity)
+    {
+        this->capacity=capacity;
+    }
+    Box operator <(Box &obj1)
+    {
+        Box temp;
+        if(capacity<obj1.capacity)
+        {
+            temp.capacity=obj1.capacity;
+            return temp;
+        }
+        else
+        {
+            temp.capacity=capacity;
+            return temp;
+        }
+    }
+    void display()
+    {
+        cout<<"The number is : "<<capacity<<endl;
+    }
+};
+
+int main()
+{
+    Box c1(10),c3;
+    Box c2=Box(14);
+    c3=c1<c2;
+    c3.display();
+
+}
